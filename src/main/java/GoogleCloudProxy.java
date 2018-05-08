@@ -16,5 +16,8 @@ public class GoogleCloudProxy {
             res.type("application/force-download");
             return new URL(urlStr).openStream();
         });
+
+        awaitInitialization();
+        System.out.println("Started server...");
     }
 }
