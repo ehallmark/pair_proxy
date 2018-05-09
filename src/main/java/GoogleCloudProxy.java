@@ -9,6 +9,7 @@ public class GoogleCloudProxy {
         get("/public_pair", (req,res)->{
             String appNum = req.queryParams("app_num");
             if(appNum==null) throw new RuntimeException("Must provide application number...");
+            System.out.println("Request for app: "+appNum);
             final String urlStr = PAIR_URL + appNum + ".zip";
             //HttpServletResponse raw = res.raw();
             res.header("Content-Disposition", "attachment; filename="+appNum+".zip");
